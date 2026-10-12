@@ -99,7 +99,6 @@ class _SettingsPageState extends State<SettingsPage> {
     try {
       final prefs = await SharedPreferences.getInstance();
 
-      // حفظ الإعداد دون محاولة استخدام قيمة الإرجاع.
       await prefs.setBool(key, value);
 
       if (!mounted) return;
@@ -140,7 +139,7 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Future<void> _showAbout() async {
-    await showAboutDialog(
+    showAboutDialog(
       context: context,
       applicationName: 'نَذْر | NATHR',
       applicationVersion: '1.0.0',
